@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebProgDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebProgDB.dbo.course' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="course">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Teacher Name" />
+            <PropertyRef Name="Department" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="Teacher Name" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Department" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="Level" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="Semester" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="LecturerLnk" Type="nchar" MaxLength="250" />
+          <Property Name="ExameLnk" Type="nchar" MaxLength="250" />
+          <Property Name="CourseLnk" Type="nchar" MaxLength="1000" />
+          <Property Name="ImgBG" Type="nchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebProgDB.dbo.Courses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Department" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="Teacher Name" Type="nchar" MaxLength="100" />
+          <Property Name="Department" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Level" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="Semester" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="LecturerLnk" Type="nchar" MaxLength="500" />
+          <Property Name="ExamesLnk" Type="nchar" MaxLength="500" />
+          <Property Name="CourseLnk" Type="nchar" MaxLength="1000" />
+          <Property Name="ImgBG" Type="nchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="WebProgDBModelStoreContainer">
+          <EntitySet Name="course" EntityType="Self.course" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [course].[ID] AS [ID], 
+    [course].[Name] AS [Name], 
+    [course].[Teacher Name] AS [Teacher Name], 
+    [course].[Department] AS [Department], 
+    [course].[Level] AS [Level], 
+    [course].[Semester] AS [Semester], 
+    [course].[LecturerLnk] AS [LecturerLnk], 
+    [course].[ExameLnk] AS [ExameLnk], 
+    [course].[CourseLnk] AS [CourseLnk], 
+    [course].[ImgBG] AS [ImgBG]
+    FROM [dbo].[course] AS [course]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Courses" EntityType="Self.Courses" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Courses].[ID] AS [ID], 
+    [Courses].[Name] AS [Name], 
+    [Courses].[Teacher Name] AS [Teacher Name], 
+    [Courses].[Department] AS [Department], 
+    [Courses].[Level] AS [Level], 
+    [Courses].[Semester] AS [Semester], 
+    [Courses].[LecturerLnk] AS [LecturerLnk], 
+    [Courses].[ExamesLnk] AS [ExamesLnk], 
+    [Courses].[CourseLnk] AS [CourseLnk], 
+    [Courses].[ImgBG] AS [ImgBG]
+    FROM [dbo].[Courses] AS [Courses]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebProgDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="course">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Teacher_Name" />
+            <PropertyRef Name="Department" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Teacher_Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Semester" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LecturerLnk" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="ExameLnk" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="CourseLnk" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="ImgBG" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Department" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Semester" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Teacher_Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Semester" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LecturerLnk" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="ExamesLnk" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="CourseLnk" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="ImgBG" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WebProgDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="course" EntityType="Self.course" />
+          <EntitySet Name="Courses" EntityType="Self.Courses" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebProgDBModelStoreContainer" CdmEntityContainer="WebProgDBEntities">
+          <EntitySetMapping Name="course">
+            <EntityTypeMapping TypeName="WebProgDBModel.course">
+              <MappingFragment StoreEntitySet="course">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Teacher_Name" ColumnName="Teacher Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="LecturerLnk" ColumnName="LecturerLnk" />
+                <ScalarProperty Name="ExameLnk" ColumnName="ExameLnk" />
+                <ScalarProperty Name="CourseLnk" ColumnName="CourseLnk" />
+                <ScalarProperty Name="ImgBG" ColumnName="ImgBG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="WebProgDBModel.Courses">
+              <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Teacher_Name" ColumnName="Teacher Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="LecturerLnk" ColumnName="LecturerLnk" />
+                <ScalarProperty Name="ExamesLnk" ColumnName="ExamesLnk" />
+                <ScalarProperty Name="CourseLnk" ColumnName="CourseLnk" />
+                <ScalarProperty Name="ImgBG" ColumnName="ImgBG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

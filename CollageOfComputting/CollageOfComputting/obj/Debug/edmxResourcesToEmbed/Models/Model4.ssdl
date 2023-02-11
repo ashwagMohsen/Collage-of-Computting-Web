@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebProgDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebProgDB.dbo.course' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Teacher Name" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Level" />
+      <PropertyRef Name="Semester" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="Teacher Name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Department" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="Level" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="Semester" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="LecturerLnk" Type="nchar" MaxLength="250" />
+    <Property Name="ExameLnk" Type="nchar" MaxLength="250" />
+    <Property Name="CourseLnk" Type="nchar" MaxLength="1000" />
+    <Property Name="ImgBG" Type="nchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebProgDB.dbo.Courses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Level" />
+      <PropertyRef Name="Semester" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="Teacher Name" Type="nchar" MaxLength="100" />
+    <Property Name="Department" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Level" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Semester" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="LecturerLnk" Type="nchar" MaxLength="500" />
+    <Property Name="ExamesLnk" Type="nchar" MaxLength="500" />
+    <Property Name="CourseLnk" Type="nchar" MaxLength="1000" />
+    <Property Name="ImgBG" Type="nchar" MaxLength="250" />
+  </EntityType>
+  <EntityContainer Name="WebProgDBModelStoreContainer">
+    <EntitySet Name="course" EntityType="Self.course" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [course].[ID] AS [ID], 
+    [course].[Name] AS [Name], 
+    [course].[Teacher Name] AS [Teacher Name], 
+    [course].[Department] AS [Department], 
+    [course].[Level] AS [Level], 
+    [course].[Semester] AS [Semester], 
+    [course].[LecturerLnk] AS [LecturerLnk], 
+    [course].[ExameLnk] AS [ExameLnk], 
+    [course].[CourseLnk] AS [CourseLnk], 
+    [course].[ImgBG] AS [ImgBG]
+    FROM [dbo].[course] AS [course]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Courses" EntityType="Self.Courses" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Courses].[ID] AS [ID], 
+    [Courses].[Name] AS [Name], 
+    [Courses].[Teacher Name] AS [Teacher Name], 
+    [Courses].[Department] AS [Department], 
+    [Courses].[Level] AS [Level], 
+    [Courses].[Semester] AS [Semester], 
+    [Courses].[LecturerLnk] AS [LecturerLnk], 
+    [Courses].[ExamesLnk] AS [ExamesLnk], 
+    [Courses].[CourseLnk] AS [CourseLnk], 
+    [Courses].[ImgBG] AS [ImgBG]
+    FROM [dbo].[Courses] AS [Courses]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
