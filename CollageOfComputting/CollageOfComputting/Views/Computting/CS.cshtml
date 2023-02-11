@@ -1,0 +1,324 @@
+﻿@using CollageOfComputting.Models;
+@using System.Collections;
+@model List<Courses>
+@{
+    ViewBag.Title = "CS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class=" perent">
+        <div class=" chiled">
+            <img src="~/imge/CS.png">
+        </div>
+        <div class=" chiled">
+            <div class="chiled-p">
+                <div class="chiled-p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="6" viewBox="0 0 96 6">
+                        <g id="Group_44" data-name="Group 44" transform="translate(-722.5 -2441.5)">
+                            <line id="Line_133" data-name="Line 133" x1="49" transform="translate(766.5 2444.5)" fill="none" stroke="#48a8c9" stroke-linecap="round" stroke-width="6" />
+                            <line id="Line_134" data-name="Line 134" x2="29" transform="translate(725.5 2444.5)" fill="none" stroke="#c96948" stroke-linecap="round" stroke-width="6" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="chiled-p-1">
+                    <p> نبذة عن تخصص علوم حاسوب</p>
+                </div>
+                <div class="chiled-p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="6" viewBox="0 0 96 6">
+                        <g id="Group_43" data-name="Group 43" transform="translate(-1137.5 -2448.5)">
+                            <line id="Line_135" data-name="Line 135" x2="49" transform="translate(1140.5 2451.5)" fill="none" stroke="#48a8c9" stroke-linecap="round" stroke-width="6" />
+                            <line id="Line_136" data-name="Line 136" x1="29" transform="translate(1201.5 2451.5)" fill="none" stroke="#c96948" stroke-linecap="round" stroke-width="6" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="chiled-p2">
+            <p>
+                يدرس الطالب الذي يتخصص بعلوم الحاسوب الكثير من المجالات المتنوعة, مثل:دراسة علم الرياضيات مع التركيز على التفاضل والتكامل calculus , والجبر الخطي, حيث يعتبر علم الرياضيات من أهم العلوم الأساسية في برمجة الحاسوب, حيث يساعد على معالجة الحاسوب للبيانات, كما يدرس الطالب الكثير من لغات البرمجة الشهيرة مثل: برنامج java وبرنامج HTML , والقليل من علوم الدارات الإلكترونية وآلية عملها, وعلوم الخوارزميات أثناء السنة الثالثة والرابعة.
+
+            </p>
+        </div>
+
+
+
+        <div class=" chiled">
+            <div class="chiled-p">
+                <div class="chiled-p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="6" viewBox="0 0 96 6">
+                        <g id="Group_44" data-name="Group 44" transform="translate(-722.5 -2441.5)">
+                            <line id="Line_133" data-name="Line 133" x1="49" transform="translate(766.5 2444.5)" fill="none" stroke="#48a8c9" stroke-linecap="round" stroke-width="6" />
+                            <line id="Line_134" data-name="Line 134" x2="29" transform="translate(725.5 2444.5)" fill="none" stroke="#c96948" stroke-linecap="round" stroke-width="6" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="chiled-p-1">
+                    <a name="1"><p>  مستويات التخصص</p></a>
+                </div>
+                <div class="chiled-p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="6" viewBox="0 0 96 6">
+                        <g id="Group_43" data-name="Group 43" transform="translate(-1137.5 -2448.5)">
+                            <line id="Line_135" data-name="Line 135" x2="49" transform="translate(1140.5 2451.5)" fill="none" stroke="#48a8c9" stroke-linecap="round" stroke-width="6" />
+                            <line id="Line_136" data-name="Line 136" x1="29" transform="translate(1201.5 2451.5)" fill="none" stroke="#c96948" stroke-linecap="round" stroke-width="6" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="sticky-here">
+    <div class="navbar-2">
+        <div class="navbar-links-2"><a href="#11"><p>المستوئ الأول</p></a></div>
+        <div class="navbar-links-2"><a href="#12"><p>المستوئ الثاني</p></a></div>
+        <div class="navbar-links-2"><a href="#13"><p>المستوئ الثالث</p></a></div>
+        <div class="navbar-links-2"><a href="#14"><p>المستوئ الرابع</p></a></div>
+    </div>
+</div>
+<section>
+    <div class="contener">
+    @{
+
+        int counter = 0;
+        ArrayList newList = new ArrayList();
+        ArrayList newList2 = new ArrayList();
+        ArrayList new2List = new ArrayList();
+        ArrayList new2List2 = new ArrayList();
+        string name = "10";
+    }
+    @foreach (var item1 in Model)
+    {
+        if (counter == 0)
+        {
+            newList.Add( @item1.Level);
+            newList2.Add(@item1.Level);
+            new2List.Add(@item1.Semester);
+            new2List2.Add(@item1.Semester);
+            counter += 1;
+        }
+        else
+        {
+            var element = "";
+            var c2 = 1;
+            foreach (var i in newList)
+            {
+                if (c2 == 2)
+                {
+                    break;
+                }
+                else
+                {
+                    if (@item1.Level != Convert.ToString(i))
+                    {
+                        element = @item1.Level;
+                    }
+                    else
+                    {
+                        c2 += 1;
+                        element = "";
+                    }
+                }
+            }
+            if (element != "")
+            {
+                newList2.Add(element);
+                newList = newList2;
+            }
+            var element2 = "";
+            var c222 = 1;
+            foreach (var i in new2List)
+            {
+                if (c222 == 2)
+                {
+                    break;
+                }
+                else
+                {
+                    if (@item1.Semester != Convert.ToString(i))
+                    {
+                        element2 = @item1.Semester;
+                    }
+                    else
+                    {
+                        c222 += 1;
+                        element2 = "";
+                    }
+                }
+            }
+            if (element2 != "")
+            {
+                new2List2.Add(element2);
+                new2List = new2List2;
+            }
+        }
+    }
+            @{ 
+                newList.Sort();
+                newList.Reverse(1, 2);
+                new2List.Sort();
+            }
+            @foreach (var j in newList)
+            {
+                   name = Convert.ToString(Convert.ToInt32(name) + 1);
+                <a name=@name></a>
+                    <div class="levels">
+                        <div class="dashs">
+                            <div class="dash1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="6" viewBox="0 0 96 6">
+                                    <g id="Group_44" data-name="Group 44" transform="translate(-722.5 -2441.5)">
+                                        <line id="Line_133" data-name="Line 133" x1="49" transform="translate(766.5 2444.5)" fill="none" stroke="#48a8c9" stroke-linecap="round" stroke-width="6" />
+                                        <line id="Line_134" data-name="Line 134" x2="29" transform="translate(725.5 2444.5)" fill="none" stroke="#c96948" stroke-linecap="round" stroke-width="6" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="p_dash"><p>@j</p></div>
+                            <div class="dash2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="6" viewBox="0 0 96 6">
+                                    <g id="Group_43" data-name="Group 43" transform="translate(-1137.5 -2448.5)">
+                                        <line id="Line_135" data-name="Line 135" x2="49" transform="translate(1140.5 2451.5)" fill="none" stroke="#48a8c9" stroke-linecap="round" stroke-width="6" />
+                                        <line id="Line_136" data-name="Line 136" x1="29" transform="translate(1201.5 2451.5)" fill="none" stroke="#c96948" stroke-linecap="round" stroke-width="6" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        @foreach (var item2 in new2List)
+                        {
+                                    <div class="p_sm">@item2</div>
+                                    <div class="semesters">
+                                        @{
+                                            int c = 0;
+                                            var nameCount = 0;
+                                            string[,] List = new string[9, 2];
+                                            string[,] List2 = new string[9, 2];
+                                            var dead = 0;
+                                            var life = 0;
+                                        }
+                                  
+                                        @foreach (var internalItem in Model)
+                                        {
+                                            if (internalItem.Semester == Convert.ToString(item2) && Convert.ToString(j) == internalItem.Level)
+                                            {
+
+                                                if (c == 0)
+                                                {
+                                                    List[dead, life] = @internalItem.Name;
+                                                    List2[dead, life] = @internalItem.Name;
+                                                    life += 1;
+                                                    List[dead, life] = @internalItem.ImgBG;
+                                                    List2[dead, life] = @internalItem.ImgBG;
+                                                    life = 0;
+                                                    dead += 1;
+                                                    c = 1;
+                                                }
+                                                else
+                                                {
+                                                    var element2 = "";
+                                                    var imgelement2 = "";
+                                                    var cc2 = 1;
+                                                    for (int i = 0; i < List.GetLength(0); i++)
+                                                    {
+                                                        c = 1;
+
+                                                        if (cc2 == 2)
+                                                        {
+                                                            break;
+                                                        }
+                                                        else
+                                                        {
+                                                            if (@internalItem.Name != Convert.ToString(List[i, 0]))
+                                                            {
+                                                                element2 = @internalItem.Name;
+                                                                imgelement2 = @internalItem.ImgBG;
+                                                            }
+                                                            else
+                                                            {
+                                                                cc2 += 1;
+                                                                element2 = "";
+                                                                imgelement2 = "";
+                                                            }
+                                                        }
+                                                    }
+                                                    if(element2 !="" || imgelement2 != "")
+                                                    {
+                                                        List2[dead, life] = element2;
+                                                        life += 1;
+                                                        List2[dead, life] = imgelement2;
+                                                        life = 0;
+                                                        dead += 1;
+                                                        List = List2;
+                                                    }
+
+                                                }
+
+                                            }
+
+                                        }
+                                         @{
+                                            
+                                             var counter2 = 0;
+                                             var variable22 = List.Length / 3;
+                                             var variable22String = Convert.ToString(List.Length / 3);
+                                             if (variable22.GetType() is float)
+                                             {
+                                                 if (variable22String[2] < 5)
+                                                 {
+                                                     var variable2 = Math.Round(Convert.ToDouble(variable22), 0) + 1;
+                                                 }
+                                                 else
+                                                 {
+                                                     var variable2 = Math.Round(Convert.ToDouble(variable22), 0);
+                                                 }
+                                             }
+                                             if (variable22 == 0)
+                                             {
+                                                 variable22 = 1;
+                                             }
+                                         }
+                            @for (int i = 0; i < variable22; i++)
+                            {
+                                <div class="row">
+                           @{ var counter1 = 0;
+                               }
+
+                               @for (int j3 = counter2; j3 < List.GetLength(0); j3++)
+                               {
+
+                                   counter1 += 1;
+
+                                   if (List[j3, 0] != null )
+                                   {
+                                       if (counter1 <= 3)
+                                       {
+                                        <div class="item">
+                                            <a href="@Url.Action("Course", "Computting", new
+                                                {
+                                                    name = List[j3, 0]
+                                                })">
+                                                     @*@{
+                                                            var x = List[j3, 1].Select(y => y.ToString().Replace(" ", "+"));
+                                                            <img src="@x">
+                                                    }*@
+                                                <img src="@List[j3, 1]">                                                                                                                                                                                                                                                                                                                                                             
+                                                <p> @List[j3, 0] </p>
+                                            </a>
+                                        </div>
+                                       }
+                                       else
+                                       {
+                                           break;
+                                       }
+                                   }
+                                   counter2 += 1;
+                               }
+                                </div>
+                               }</div>
+                               }
+                    </div>          }
+        </div>
+    </section>
+   

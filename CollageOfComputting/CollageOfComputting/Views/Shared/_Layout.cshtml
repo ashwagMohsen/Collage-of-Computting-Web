@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>كلية الحاسبات</title>
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand-title">  <img id="logo" src="~/imge/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9%20%D8%AD%D8%B6%D8%B1%D9%85%D9%88%D8%AA.jpg"> </div>
+
+        <a class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a class="active" href="/Computting/Index">الصفحة الرئيسية</a></li>
+                <li><a href="@Url.Action("IT", "Computting", new{dept="IT",dept2="Bouth" })">تقنية معلومات </a></li>
+                <li><a href="@Url.Action("CS", "Computting", new{dept="CS",dept2="Bouth" })">علوم حاسوب</a></li>
+            </ul>
+        </div>
+    </nav>
+    @RenderBody()
+    <footer>
+        <div class="perent-2">
+            <div class="chiled a">
+                <p class="header"> من نحن</p>
+                <p class="para">
+                    طلاب كلية الحاسبات و تقنية الدفعة الثالثة تقنية معلومات
+                </p>
+                <ul>
+                    <li>حمزة بلعلا</li>
+                    <li>محفوظ بن سباح</li>
+                    <li>محمد بامطرف</li>
+                    <li>حمزة الجنيد</li>
+                    <li>سلطان باجعيفر</li>
+                    <li>سماحة الفضلي </li>
+                    <li>كوثر مسيعان</li>
+                    <li>فاطمة بن عبدالعزيز</li>
+                    <li>مريم باشطح</li>
+                    <li>أشواق الذيباني</li>
+
+
+                </ul>
+
+
+
+            </div>
+
+            <div class="chiled" id="b">
+                <p class="header">عن الموقع</p>
+                <p class="para">  الموقع يدير مقررات المستويات الدراسية للتخصصي تقنية معومات و علوم حاسوب</p>
+
+
+
+            </div>
+
+            <div class="chiled c">
+                <p class="header"> الصفحات</p>
+                <a href="/Computting/Index"> الصفحةالرئيسية</a>
+                <a href="@Url.Action("IT", "Computting", new{dept="IT",dept2="Bouth" })"> تقنية المعلومات</a>
+                <a href="@Url.Action("CS", "Computting", new{dept="CS",dept2="Bouth" })"> علوم حاسوب </a>
+
+
+
+            </div>
+            <br>
+
+
+
+        </div>
+    </footer>
+
+    <script>
+        //----------------------------navbar resposive---------
+        const toggleButton=document.getElementsByClassName('toggle-button')[0];
+        const navbaeLiks=document.getElementsByClassName('navbar-links')[0];
+        toggleButton.addEventListener('click', () =>{ navbaeLiks.classList.toggle('active')} )
+
+
+
+
+    </script>
+</body>
+</html>
+

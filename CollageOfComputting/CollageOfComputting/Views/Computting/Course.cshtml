@@ -1,0 +1,111 @@
+﻿@using CollageOfComputting.Models;
+@model List<Courses>
+@{
+    ViewBag.Title = "_MainPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="perent-cuoress">
+    <div class="chiled-1">
+        <img src=@Model[0].ImgBG alt="">
+    </div>
+    <div class="name-tech">
+        <p id="getCoursename">@Model[0].Name</p>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class=" chiled-2">
+        <div class="sub-chiled-2">
+            <p>مدرسي المادة</p>
+            <form method="POST">
+                <select id="select">
+                    @foreach (var item in Model)
+                    {
+                        <option>@item.Teacher_Name</option>
+                    }
+                </select>
+
+                <p id="worning"></p>
+                <div class="sub-chiled-button">
+
+                    <input type="button" value="موافق" onclick="getLecture()" />
+
+                </div>
+            </form>
+        </div>
+        <div class="sub-chiled-2">
+            <p>المحاضرت</p>
+            @{
+                if (Model[0].LecturerLnk == null)
+                {
+                    <p id="worning">ملاحظة:عذرا المحاضرة غير متوفرة حاليا </p>
+                }
+                else
+                {
+                    <p id="worning">ملاحظة:إضغط "تحميل" لتحميل المحاضرات zip</p>
+                        <div class="sub-chiled-button">
+                           <a id="pdf1" href= "@Url.Action("DownloadFile", "Computting", new { file = @Model[0].LecturerLnk })" ><input type="button" value="تحميل"></a>
+                          
+                        </div>
+                }
+            }
+        
+
+        </div>
+
+        <div class="sub-chiled-2">
+            <p> نماذج أختبارات</p>
+            @{
+                if (Model[0].ExamesLnk == null)
+                {
+                    <p id="worning">ملاحظة:عذرا نماذج الاختبارات لهذه الماده غير متوفرة حاليا </p>
+                }
+                else
+                {
+                    <p id="worning">ملاحظة:إضغط "تحميل" لتحميل النماذج PDF</p>
+                    <div class="sub-chiled-button">
+                        <a id="pdf2" href=@Model[0].ExamesLnk download><input type="button" src="" value="تحميل"></a>
+                    </div>
+                }
+            }       
+         </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    function getLecture() {
+        $.ajax({
+            async: true,
+            method: 'GET',
+            dataType: 'JSON',
+            contentType: 'application/json; charset=utf-8',
+            url: '/Computting/getLecture1',
+            data: { teacherName: $("#select").val(), getCoursename: document.getElementById("getCoursename").textContent },
+            success: function (data) {
+
+                $("#pdf1").attr("href", data[0].LecturerLnk);
+                $("#pdf2").attr("href", data[0].ExamesLnk);
+            },
+            error: function () {
+                console.log("There is a proplem not get the Lecture!!!")
+            }
+
+        });
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4855B8C9-59F4-4520-B681-0A492F7ADEE5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CollageOfComputting</RootNamespace>
+    <AssemblyName>CollageOfComputting</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\advancedMobileApp\1.png" />
+    <Content Include="Images\advancedOpertingSystem\1.jpg" />
+    <Content Include="Images\advancedSoftware\1.png" />
+    <Content Include="Images\analysis&amp;DesignAlgorithm\1.jpg" />
+    <Content Include="Images\ArabicLanguage1\1.jpg" />
+    <Content Include="Images\ArabicLanguage1\2.jpeg" />
+    <Content Include="Images\ArabicLanguage1\2.jpg" />
+    <Content Include="Images\arabicLevel2\1.jpg" />
+    <Content Include="Images\ArtificialIntelligence\1.jpg" />
+    <Content Include="Images\businessIntel\1.jpg" />
+    <Content Include="Images\communication\1.jpg" />
+    <Content Include="Images\computerGraphics\1.png" />
+    <Content Include="Images\ComputerOrganization&amp;Architecture\1.jpg" />
+    <Content Include="Images\ComputerProgramming1\1.jpg" />
+    <Content Include="Images\ComputerProgramming2\1.jpg" />
+    <Content Include="Images\ComputerSecurity\1.jpg" />
+    <Content Include="Images\ComputerSkills\1.jpg" />
+    <Content Include="Images\DatabaseAdministration\1.jpg" />
+    <Content Include="Images\databaseProgramming\1.jpg" />
+    <Content Include="Images\dataMining\1.jpg" />
+    <Content Include="Images\DataStructure\1.jpg" />
+    <Content Include="Images\decisionSupportedSystem\1.jpg" />
+    <Content Include="Images\DifferentialCalculus\1.png" />
+    <Content Include="Images\digitalImg\1.jpg" />
+    <Content Include="Images\DiscreteStructures\1.jpg" />
+    <Content Include="Images\EnglishLanguage1\1.jpg" />
+    <Content Include="Images\EnglishLanguage2\1.jpg" />
+    <Content Include="Images\EnglishLanguage3\1.jpg" />
+    <Content Include="Images\englishLevell4\1.jpg" />
+    <Content Include="Images\Entrepreneur\1.jpg" />
+    <Content Include="Images\fundamentalOfComputer\1.png" />
+    <Content Include="Images\FundamentalsofComputerNetworks\1.png" />
+    <Content Include="Images\FundamentalsofComputerNetworks\2.jpg" />
+    <Content Include="Images\GeneralPhysics\1.jpg" />
+    <Content Include="Images\HumanComputerInteraction\1.jpg" />
+    <Content Include="Images\integralCalculs\1.jpeg" />
+    <Content Include="Images\integralCalculs\1.jpg" />
+    <Content Include="Images\intelSystem\1.jpg" />
+    <Content Include="Images\IntroductiontoDatabases\1.png" />
+    <Content Include="Images\IntroductiontoStatistics&amp;Probability\1.jpg" />
+    <Content Include="Images\IntroductiontoStatistics&amp;Probability\2.png" />
+    <Content Include="Images\IslamicCulture1\1.jpg" />
+    <Content Include="Images\IslamicCulture2\1.jpg" />
+    <Content Include="Images\ITFundamental\1.jpg" />
+    <Content Include="Images\LearningThinking&amp;ResearchSkills\1.png" />
+    <Content Include="Images\LinearAlgebra\1.jpg" />
+    <Content Include="Images\networkDesign\1.jpg" />
+    <Content Include="Images\networkRoutting&amp;Switching\1.jpg" />
+    <Content Include="Images\networkSecurity\1.png" />
+    <Content Include="Images\networkService\1.jpg" />
+    <Content Include="Images\numricalAnalysis\1.png" />
+    <Content Include="Images\OperatingSystem\1.jpg" />
+    <Content Include="Images\OpjectOrintedProgramm\1.jpg" />
+    <Content Include="Images\principlesOfEcomeric\1.png" />
+    <Content Include="Images\PrinciplesofEconomics\1.jpg" />
+    <Content Include="Images\ProfessionalEthics\1.jpg" />
+    <Content Include="Images\projectManagement\1.jpg" />
+    <Content Include="Images\SelectedTopicCS\1.jpg" />
+    <Content Include="Images\selectedTopicIT\1.jpeg" />
+    <Content Include="Images\selectedTopicIT\1.jpg" />
+    <Content Include="Images\SoftwareDesign&amp;Development\1.png" />
+    <Content Include="Images\SoftwareEngineering\1.jpg" />
+    <Content Include="Images\systemDesign\1.jpg" />
+    <Content Include="Images\TechinicalSupport\1.jpg" />
+    <Content Include="Images\TechnicalWriting\1.jpg" />
+    <Content Include="Images\theory\1.png" />
+    <Content Include="Images\VisualProgramming\1.jpg" />
+    <Content Include="Images\WebSystem\1.png" />
+    <Content Include="Images\wirelessNetowrk\1.jpg" />
+    <Content Include="imge\041e2fd9-8748-459c-bfc2-0bfafe75b29d.png" />
+    <Content Include="imge\8600.jpg" />
+    <Content Include="imge\CS.png" />
+    <Content Include="imge\Information-Technology-1.jpg" />
+    <Content Include="imge\IT.png" />
+    <Content Include="imge\IT_1904713683692695.png" />
+    <Content Include="imge\جامعة حضرموت.jpg" />
+    <Content Include="imge\جامعة حضرموت.png" />
+    <Content Include="imge\كلية الحاسبات.png" />
+    <Content Include="Models\Model4.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model4.edmx</DependentUpon>
+      <LastGenOutput>Model4.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model4.edmx</DependentUpon>
+      <LastGenOutput>Model4.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model5.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model5.edmx</DependentUpon>
+      <LastGenOutput>Model5.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model5.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model5.edmx</DependentUpon>
+      <LastGenOutput>Model5.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model5.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model5.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model5.edmx.diagram">
+      <DependentUpon>Model5.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComputtingController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\course.cs">
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Courses.cs">
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model4.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model4.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model4.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model5.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Models\Model4.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model4.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model4.edmx.diagram">
+      <DependentUpon>Model4.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Computting\Course.cshtml" />
+    <Content Include="Views\Computting\CS.cshtml" />
+    <Content Include="Views\Computting\Index.cshtml" />
+    <Content Include="Views\Computting\IT.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Files\F Lvl\F sem\Arabic Language 1 Raadeh Alboosee\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Computer Programming1 Dr.Mohammed Bamatraf\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Computer Programming1 Dr.Mohammed Bamatraf\Lectures.rar" />
+    <Content Include="Files\F Lvl\F sem\Computer Programming1 T.Mona Johar\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Computer Programming1 T.Mona Johar\Lectures.rar" />
+    <Content Include="Files\F Lvl\F sem\Computer Skills Abeer Almohdhar\Lectures.rar" />
+    <Content Include="Files\F Lvl\F sem\Differential Calculus Fatma Habeer\Lectures.rar" />
+    <Content Include="Files\F Lvl\F sem\Differential Calculus T.Rafat Bin Talib\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Differential Calculus T.Rafat Bin Talib\Lectures.rar" />
+    <Content Include="Files\F Lvl\F sem\Discrete Structures Mr.Awad Bin Jobah\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Discrete Structures Mr.Awad Bin Jobah\Lectures.rar" />
+    <Content Include="Files\F Lvl\F sem\English Language 1\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Islamic Culture 1 Dr.Sultain Badheer\Exames.rar" />
+    <Content Include="Files\F Lvl\F sem\Islamic Culture 1 Dr.Sultain Badheer\Lectures.rar" />
+    <Content Include="Files\F Lvl\S sem\Arabic Language 2 M.Abdullah Bakharish\Exames.rar" />
+    <Content Include="Files\F Lvl\S sem\Computer Programming 2 Dr.Mohammed Bamatraf\Lectures.rar" />
+    <Content Include="Files\F Lvl\S sem\Computer Programming 2 T.Afaf Bin Saadon\Lectures.rar" />
+    <Content Include="Files\F Lvl\S sem\CS\CS Fundamentals  Dr.Naziha Alaidroos\Lectures.rar" />
+    <Content Include="Files\F Lvl\S sem\English Language 2 Eman Ahmed Albaiti\Exames.rar" />
+    <Content Include="Files\F Lvl\S sem\General Physics T.Yahea Bateian\Exames.rar" />
+    <Content Include="Files\F Lvl\S sem\General Physics T.Yahea Bateian\Lectures.rar" />
+    <Content Include="Files\F Lvl\S sem\Integral Calculus Mr.Awad Bin Jobah\Exames.rar" />
+    <Content Include="Files\F Lvl\S sem\Islamic Culture 2\Lectures.rar" />
+    <Content Include="Files\F Lvl\S sem\IT\IT Fundamental Dr.Saeed Baneamoon\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\CS\Business Intel and Decision Support Systems\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\CS\Digital Image Processing Dr.Amaal Bataher\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Advanced Software design and development T.Sabry Obaid\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Entrepreneurship in IT Dr.Rabea Alawbathani\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Network Design and Management Dr.Makarm Bamatraf\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Network security\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Selected Topic in IT\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Technology Management Dr.Rabea Alawbathani\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\IT\Wireless Networks T.Abdullah Alamoudi\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\F sem\Mobile Application Development T.Amal Haqs\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\S sem\Advanced Mobile Application Development\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\S sem\CS\Data Mining\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\S sem\IT\Intelligent Systems Dr.Saeed Baneamoon\Lectures.rar" />
+    <Content Include="Files\Fo Lvl\S sem\IT\Networking Services\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\Computer Organization &amp; Architecture Dr.Saeed Baneamoon\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\Computer Organization &amp; Architecture Dr.Saeed Baneamoon\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\CS\Theory of Computation Dr. Aziz Nasr\Examers.rar" />
+    <Content Include="Files\S Lvl\F sem\CS\Theory of Computation Dr. Aziz Nasr\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\Data Structure Dr.Naziha Alaidroos\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\Data Structure Dr.Naziha Alaidroos\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\English Language 3\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\Introduction to Statistics &amp; Probability  Mr.Awad Bin Jobah\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\Introduction to Statistics &amp; Probability  Mr.Awad Bin Jobah\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\IT\Principles of Economics Dr.Rabea Alawbathani\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\IT\Principles of Economics Dr.Rabea Alawbathani\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\Linear Algebra T.Fatima Habeer\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\Linear Algebra T.Fatima Habeer\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\Linear Algebra T.Rafat Bin Talib\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\Opject Orinted Programm Dr. Aziz Nasr\Lectures.rar" />
+    <Content Include="Files\S Lvl\F sem\Opject Orinted Programm T.Afaf Bin Sadoon\Exames.rar" />
+    <Content Include="Files\S Lvl\F sem\Opject Orinted Programm T.Afaf Bin Sadoon\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\Communication Skills Dr.Rabea Alawbathani\Exames.rar" />
+    <Content Include="Files\S Lvl\S sem\Communication Skills Dr.Rabea Alawbathani\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\CS\Design and Analysis of Algorithms Dr.Abeer Almohdhar\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\CS\Design and Analysis of Algorithms T.Amaal Bin Taher\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\Introduction to Databases Dr.Ibrahim Fadhel\Exames.rar" />
+    <Content Include="Files\S Lvl\S sem\Introduction to Databases Dr.Ibrahim Fadhel\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\IT\Human Computer Interaction Dr.Saeed Baneamoon\Exames.rar" />
+    <Content Include="Files\S Lvl\S sem\IT\Human Computer Interaction Dr.Saeed Baneamoon\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\Learning Thinking &amp; Research Skills Dr.Ibrahim Fadhel\Exames.rar" />
+    <Content Include="Files\S Lvl\S sem\Learning Thinking &amp; Research Skills Dr.Ibrahim Fadhel\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\Operating System T.Majied Shadirah\Exames.rar" />
+    <Content Include="Files\S Lvl\S sem\Operating System T.Majied Shadirah\Lectures.rar" />
+    <Content Include="Files\S Lvl\S sem\Web System Dr.Abeer Almohdhar\Exames.rar" />
+    <Content Include="Files\S Lvl\S sem\Web System Dr.Abeer Almohdhar\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\CS\Artificial Intelligence Dr.Saeed Baneamoon\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Database Administration Dr.Salah Bin Dohman\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Database Administration T.Afaf Bin Sadoon\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Fundamentals of Computer Networks Dr.Ibrahim Fadhel\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Fundamentals of Computer Networks Dr.Makarm Bamatraf\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\IT\Techinical Support M.Yasser Alamoudi\Exames.rar" />
+    <Content Include="Files\T Lvl\F sem\IT\Techinical Support M.Yasser Alamoudi\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Professional Ethics Dr.Abeer Almohdhar\Exames.rar" />
+    <Content Include="Files\T Lvl\F sem\Professional Ethics Dr.Abeer Almohdhar\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Software Engineering Dr.Ibrahim Fadhel\Exames.rar" />
+    <Content Include="Files\T Lvl\F sem\Software Engineering Dr.Ibrahim Fadhel\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Technical Writing Abeer Almahree\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Visual Programming Qameer Alrasheed\Exames.rar" />
+    <Content Include="Files\T Lvl\F sem\Visual Programming Qameer Alrasheed\Lectures.rar" />
+    <Content Include="Files\T Lvl\F sem\Visual Programming T.Amal Haqs\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\Computer Security Dr.Naziha Alaidroos\Examex.rar" />
+    <Content Include="Files\T Lvl\S sem\Computer Security Dr.Naziha Alaidroos\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\CS\Advanced Operating Systems Dr.Mohammed Bamtraff\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\CS\Computer Graphics Amall Bin Taher\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\CS\Numerical Analysis  Nadee Sweed\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\CS\System Design and Analysis Wadeeh Sabtee\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Database Programming Dr.Salah Bindahman\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Database Programming Qameer Alrasheed\Exames.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Database Programming Qameer Alrasheed\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Network Routing and Switching Dr.Makarm Bamatraf\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Network Routing and Switching T.Abdullah Alamoudi\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Principles of E-commerce  Amal Haqs\Exames.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Principles of E-commerce  Amal Haqs\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Principles of E-commerce Waddeh Alsabtee\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Project Management Dr.Mohammed Bamatraf\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Project Management Dr.Rabea Alawbathani\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\IT\Wireless Networks T.Abdullah Alamoudi\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\Software Design &amp; Development T.Marwan Lardhi\Exames.rar" />
+    <Content Include="Files\T Lvl\S sem\Software Design &amp; Development T.Marwan Lardhi\Lectures.rar" />
+    <Content Include="Files\T Lvl\S sem\Software Design &amp; Development T.Sabry Obaid\Lectures.rar" />
+    <Content Include="fonts\ElMessiri-Regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5534</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5534/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
